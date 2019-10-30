@@ -24,23 +24,15 @@ This bot also uses LUIS model created at https://www.luis.ai/. Please refer manu
     node --version
     ```
 
-### Create a QnAMaker Application to enable QnA Knowledge Bases
-
-QnA knowledge base setup and application configuration steps can be found [here](https://aka.ms/qna-instructions).
-
 ## To try this sample
 
-- Clone the repository
+- Clone the repository OR download as zip from dropdown.
 
     ```bash
-    git clone https://github.com/microsoft/botbuilder-samples.git
+    git clone https://github.com/SureshG02/LUIS_FAQs.git
     ```
 
-- In a terminal, navigate to `samples/javascript_nodejs/11.qnamaker`
-
-    ```bash
-    cd samples/javascript_nodejs/11.qnamaker
-    ```
+- In a terminal, navigate to `/LUIS_FAQs` folder.
 
 - Install modules
 
@@ -51,7 +43,6 @@ QnA knowledge base setup and application configuration steps can be found [here]
 - Setup QnAMaker
 
     Please refer manual to set up QnA for 112 digia FAQs.
-
 	
 - Setup LUIS
 
@@ -75,11 +66,28 @@ QnA knowledge base setup and application configuration steps can be found [here]
 - File -> Open Bot
 - Enter a Bot URL of `http://localhost:3978/api/messages`
 
+
 ## Deploy the bot to Azure
 
-To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
+## Prerequisites
 
-az webapp deployment source config-zip --resource-group "Digisfaari_Chatbot_Resource_Group" --name "112digiarehearsal" --src "11.qnamaker.zip"
+Install Azure CLI
+
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+
+Use below commands to deploy to cloud.
+
+az login
+
+az account set --subscription "subscription-id"
+
+## Go to LUIS_FAQs directory and run below command
+
+az bot prepare-deploy --code-dir "." --lang Javascript
+
+## Zip LUIS_FAQs folder and run below command from directory where zip file exists.
+
+az webapp deployment source config-zip --resource-group "<resource-group-name>" --name "<name-of-web-app>" --src "code.zip"
 
 
 ## LUIS Intents, Utterences and Entities
