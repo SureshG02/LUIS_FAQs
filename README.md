@@ -50,6 +50,8 @@ This bot also uses LUIS model created at https://www.luis.ai/. Please refer manu
 	
 - Run the sample
 
+	Update MicrosoftAppId, MicrosoftAppPassword, QnAKnowledgebaseId, QnAEndpointKey, QnAEndpointHostName, LuisAppId, LuisAPIKey and LuisAPIHostName in .env file and run below command.
+
     ```bash
     npm start
     ```
