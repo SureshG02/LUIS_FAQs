@@ -87,7 +87,7 @@ az account set --subscription "subscription-id"
 
 az bot prepare-deploy --code-dir "." --lang Javascript
 
-## Zip LUIS_FAQs folder and run below command from directory where zip file exists.
+## Go to LUIS_FAQs folder and zip all files present there. Run below command from directory where zip file exists.
 
 az webapp deployment source config-zip --resource-group "<resource-group-name>" --name "<name-of-web-app>" --src "code.zip"
 
